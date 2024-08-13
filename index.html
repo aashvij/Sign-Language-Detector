@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MediaPipe Hand Landmarks</title>
+        <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+        <script type="module" src="dist/mediapipeHand.js"></script>
+    </head>
+    <body>
+        <video id="videoElement" height="480" width="640" autoplay style="border: 3px solid black; display:none"></video>
+        <canvas id="canvasFrame" height="480" width="640" style= "border: 3px solid #62C6F2;"></canvas>
+        <button id="enableBtn">Start Video Stream</button>
+        <p id="textBox" 
+            style="
+                color: blue; 
+                font-size: 40px; 
+                text-transform: uppercase;
+                margin: 0px;">
+        </p>
+        <script type="module"> 
+            import mediapipehands from 'https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/+esm'
+            import mediapipetasksVision from 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/+esm'
+            import mediapipedrawingUtils from 'https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3.1675466124/+esm'
+        </script>
+        <script type="module" src="dist/mediapipeHand.js"></script>
+    </body>
+</html>

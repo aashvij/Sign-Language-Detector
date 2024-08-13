@@ -44,4 +44,3 @@ Click here to test out my project yourself! LINK
 This demo showcases the web app's ability to recognize and interpret ASL signs in real-time, demonstrating the seamless integration of MediaPipe's hand tracking with my trained neural network.
 
 This project helped enhance my skills in AI and web development and learn more about the large range of applications of computer science. Building upon this project further has the potential to make communication more accessible for the deaf and hard of hearing community.
-

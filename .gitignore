@@ -1,0 +1,11 @@
+node_modules/
+.venv
+landmarks animated gif.gif
+annotated/
+practiceImgs/
+.vscode/
+.DS_Store
+asl_alphabet_test/
+landmarkerPy.py
+trainingImgs.zip
+hand_landmarks.csv
