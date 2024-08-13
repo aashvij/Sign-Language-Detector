@@ -17,7 +17,7 @@ Data: Kaggle datasets
 
 **Implementing MediaPipe**: Integrated Google's MediaPipe API to detect hand landmarks and connections in a live video feed, bringing this functionality to life in a web environment.
 
-GIF
+![](https://github.com/Sign-Language-Detector/landmarks-animated.gif)
 
 **Building the Neural Network**: Constructed a Fully Connected Neural Network (FCNN) model using PyTorch, using pandas and numpy for efficient data manipulation.
 
