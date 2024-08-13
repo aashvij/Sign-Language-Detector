@@ -1,7 +1,8 @@
 # Project Overview
 As a college student diving into applications of AI for the first time, I built a web app that detects American Sign Language (ASL) in real-time using numerous technologies. This project was an educational journey through the deep learning, computer vision, and full-stack development.
 
-Project link: - 
+Project link: [https://aashvij.github.io/Sign-Language-Detector/]
+Medium Article: [https://medium.com/@aashvijain.dev/mediapipe-sign-language-detector-00ccc0914988]
 
 ## Tech Stack
 
