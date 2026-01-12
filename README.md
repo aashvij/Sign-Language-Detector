@@ -1,42 +1,99 @@
-# Project Overview
-As a college student diving into applications of AI for the first time, I built a web app that detects American Sign Language (ASL) in real-time using numerous technologies. This project was an educational journey through the deep learning, computer vision, and full-stack development.
+# ASL Sign Language Detector
 
-Project link: [https://aashvij.github.io/Sign-Language-Detector/]
+A real-time American Sign Language (ASL) alphabet detector that recognizes hand signs through your webcam. Built with MediaPipe for hand tracking and a custom PyTorch neural network for classification.
 
-Medium Article: [https://medium.com/@aashvijain.dev/mediapipe-sign-language-detector-00ccc0914988]
+**[Try the Live Demo →](https://aashvij.github.io/Sign-Language-Detector/)**
+
+## Overview
+
+This project detects and classifies ASL alphabet letters in real-time using:
+- **MediaPipe Hands** for detecting 21 3D hand landmarks from video frames
+- **Fully Connected Neural Network (FCNN)** trained in PyTorch to classify hand poses
+- **Web deployment** using TypeScript/JavaScript for browser-based inference
+
+The model achieves **95%+ accuracy** on ASL alphabet recognition.
+
+## How It Works
+
+1. **Hand Detection:** MediaPipe identifies hand landmarks (x, y, z coordinates for 21 points) from each video frame
+2. **Feature Extraction:** Landmark coordinates are normalized and flattened into a feature vector
+3. **Classification:** The trained FCNN predicts which ASL letter the hand pose represents
+4. **Display:** The predicted letter is shown in real-time on the video feed
 
 ## Tech Stack
 
-Frontend: TypeScript, JavaScript, HTML
+| Component | Technology |
+|-----------|------------|
+| Hand Tracking | MediaPipe |
+| Model Training | PyTorch, NumPy, pandas |
+| Data Collection | Python, OpenCV |
+| Web App | TypeScript, JavaScript, HTML/CSS |
+| Dataset | Kaggle ASL dataset + custom captures |
 
-Backend: Python
+## Project Structure
 
-AI/ML: MediaPipe, PyTorch, OpenCV
+```
+├── model/                  # Trained PyTorch model
+├── data/                   # Training data and preprocessing scripts
+├── web/                    # Web application source
+│   ├── index.html
+│   └── ...
+├── train.py                # Model training script
+├── collect_data.py         # Data collection using webcam
+└── README.md
+```
 
-Data: Kaggle datasets
+## Running Locally
 
-# Key Development Stages
+### Prerequisites
+- Python 3.8+
+- Node.js (for web app)
+- Webcam
 
-**Implementing MediaPipe**: Integrated Google's MediaPipe API to detect hand landmarks and connections in a live video feed, bringing this functionality to life in a web environment.
+### Training the Model
 
-**Building the Neural Network**: Constructed a Fully Connected Neural Network (FCNN) model using PyTorch, using pandas and numpy for efficient data manipulation.
+```bash
+# Install dependencies
+pip install torch mediapipe opencv-python pandas numpy
 
-**Data Collection and Preprocessing**: Deployed MediaPipe with Python and OpenCV to capture and process video frames, creating a quality dataset of 15 test images for each ASL letter.
+# Collect custom data (optional)
+python collect_data.py
 
-**Training and Optimization**: Utilized Kaggle dataset to train the model, repeatedly refining the architecture and hyperparameters until achieving 95%+ accuracy.
+# Train the model
+python train.py
+```
 
-**Web Integration**: Exported the trained model as an ONNX file and integrated it into the original web app, creating a responsive and 95% accurate ASL detection system.
+### Running the Web App
 
-# Overcoming Challenges
-This project was my first try at building and training a neural network from scratch so it presented several exciting challenges:
+```bash
+# Navigate to web directory
+cd web
 
-**MediaPipe Integration**: While a large quota of documentation exists for OpenCV and Python implementations, resources for JavaScript integration were scarce. This encouraged me to scour the MediaPipe documentation and experiment with various implementation strategies.
+# Open index.html in your browser, or use a local server
+python -m http.server 8000
+```
 
-**Boosting Accuracy**: My inital training epochs yielded a mere 14% accuracy. Through the repeated refinement and significantly expanding the dataset from 5,000 to 143,000 images (approximately 5,500 per sign), I was able to achieve 96% accuracy.
+Then open `http://localhost:8000` in your browser.
 
-## Demo
-Click here to test out my project yourself! [https://aashvij.github.io/Sign-Language-Detector/]
+## What I Learned
 
-This demo showcases the web app's ability to recognize and interpret ASL signs in real-time, demonstrating the seamless integration of MediaPipe's hand tracking with my trained neural network.
+- Integrating MediaPipe's hand tracking pipeline into both Python and web environments
+- Building and training neural networks with PyTorch
+- Processing real-time video streams with OpenCV
+- Deploying ML models to the browser
 
-This project helped enhance my skills in AI and web development and learn more about the large range of applications of computer science. Building upon this project further has the potential to make communication more accessible for the deaf and hard of hearing community.
+## Future Improvements
+
+- [ ] Expand to full ASL words/phrases, not just alphabet
+- [ ] Add support for two-handed signs
+- [ ] Improve accuracy on similar-looking letters (e.g., M/N, A/S)
+- [ ] Mobile-responsive design
+
+## Resources
+
+- [MediaPipe Hands Documentation](https://google.github.io/mediapipe/solutions/hands.html)
+- [My Medium Article on This Project](https://medium.com/@aashvijain.dev/mediapipe-sign-language-detector-00ccc0914988)
+
+---
+
+Built by [Aashvi Jain](https://github.com/aashvij)
