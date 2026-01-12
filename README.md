@@ -5,6 +5,7 @@ A real-time American Sign Language (ASL) alphabet detector that recognizes hand 
 **[Try the Live Demo →](https://aashvij.github.io/Sign-Language-Detector/)**
 
 ![Demo GIF](demo.gif)
+
 Demo of the web app
 
 ## Overview
